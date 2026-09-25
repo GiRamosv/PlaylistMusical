@@ -1,0 +1,528 @@
+/* =====================================================
+   MODELO 3 — PLAYLIST EDITORIAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+
+    background: #f3f3f1;
+
+    color: #202020;
+
+    line-height: 1.5;
+}
+
+/* =====================================================
+   NAVBAR - TELA 3
+===================================================== */
+
+nav {
+    width: 92%;
+
+    max-width: 1200px;
+
+    margin: 20px auto 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e1dc;
+
+    border-radius: 50px;
+
+    box-shadow: 0 5px 18px #0000000b;
+
+    position: sticky;
+
+    top: 15px;
+
+    z-index: 1000;
+}
+
+nav a {
+    position: relative;
+
+    padding: 10px 20px;
+
+    color: #666;
+
+    text-decoration: none;
+
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    border-radius: 30px;
+
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #203328;
+
+    background: #eef4ef;
+}
+
+/* =====================================================
+   TRACINHO DA TELA 3
+===================================================== */
+
+nav a:nth-child(3)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+    right: 20px;
+
+    bottom: 3px;
+
+    height: 3px;
+
+    background: #31563d;
+
+    border-radius: 10px;
+}
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 600px) {
+
+    nav {
+        width: 94%;
+
+        gap: 2px;
+
+        padding: 6px;
+    }
+
+    nav a {
+        padding: 9px 11px;
+
+        font-size: 12px;
+    }
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+    width: 92%;
+    max-width: 1200px;
+
+    margin: 30px auto;
+
+    padding: 55px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17251d,
+            #263f2e
+        );
+
+    color: white;
+}
+
+header h1 {
+    font-size: 44px;
+
+    letter-spacing: -2px;
+}
+
+header p {
+    margin-top: 8px;
+
+    color: #c8d2ca;
+
+    font-size: 15px;
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+main {
+    width: 92%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.6fr 0.8fr;
+
+    grid-template-areas:
+
+        "playlist adicionar"
+
+        "playlist filtro"
+
+        "musicas filtro";
+
+    gap: 20px;
+}
+
+main section:nth-child(1) {
+    grid-area: adicionar;
+}
+
+main section:nth-child(2) {
+    grid-area: playlist;
+}
+
+main section:nth-child(3) {
+    grid-area: musicas;
+}
+
+main section:nth-child(4) {
+    grid-area: filtro;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+section {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    border: 1px solid #e1e1dc;
+
+    box-shadow: 0 8px 25px #0000000b;
+
+    transition: 0.3s;
+}
+
+section:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px #00000014;
+}
+
+section h2 {
+    font-size: 21px;
+
+    margin-bottom: 20px;
+
+    color: #203328;
+}
+
+/* =====================================================
+   PLAYLIST PRINCIPAL
+===================================================== */
+
+main section:nth-child(2) {
+    min-height: 600px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f0f4ef
+        );
+}
+
+main section:nth-child(2) h2 {
+    font-size: 30px;
+
+    letter-spacing: -1px;
+}
+
+/* =====================================================
+   CONTADOR
+===================================================== */
+
+#contadorMusicas {
+    display: inline-block;
+
+    padding: 4px 11px;
+
+    margin-left: 5px;
+
+    border-radius: 20px;
+
+    background: #dce9df;
+
+    color: #31563d;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+/* =====================================================
+   LISTA
+===================================================== */
+
+ul {
+    list-style: none;
+
+    margin-top: 25px;
+}
+
+li {
+    display: flex;
+
+    align-items: center;
+
+    padding: 16px;
+
+    margin-bottom: 9px;
+
+    border-bottom: 1px solid #e4e4df;
+
+    color: #333;
+
+    transition: 0.3s;
+}
+
+li::before {
+    content: "♪";
+
+    margin-right: 15px;
+
+    color: #31563d;
+
+    font-size: 19px;
+}
+
+li:hover {
+    background: #eef4ef;
+
+    border-radius: 9px;
+
+    padding-left: 22px;
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+label {
+    color: #666;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-top: 7px;
+}
+
+input {
+    padding: 13px;
+
+    border: 1px solid #d9d9d4;
+
+    border-radius: 9px;
+
+    background: #f9f9f7;
+
+    color: #222;
+
+    outline: none;
+
+    font-family: inherit;
+
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #31563d;
+
+    background: white;
+}
+
+/* =====================================================
+   BOTÕES
+===================================================== */
+
+button {
+    padding: 12px 18px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #31563d;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #3e6d4d;
+
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   FILTRO
+===================================================== */
+
+main section:nth-child(4) {
+    background: #203328;
+
+    color: white;
+}
+
+main section:nth-child(4) h2 {
+    color: white;
+}
+
+main section:nth-child(4) label {
+    color: #bfc9c1;
+}
+
+main section:nth-child(4) input {
+    background: #ffffff;
+
+    border: none;
+}
+
+main section:nth-child(4) button {
+    background: #ffffff;
+
+    color: #203328;
+}
+
+#resultadoFiltro {
+    margin-top: 18px;
+}
+
+#resultadoFiltro p {
+    padding: 11px;
+
+    margin-bottom: 7px;
+
+    background: #ffffff12;
+
+    border-radius: 8px;
+
+    color: #d8dfda;
+
+    font-size: 13px;
+}
+
+/* =====================================================
+   MÚSICAS JUNTAS
+===================================================== */
+
+main section:nth-child(3) {
+    background: #fff;
+
+    padding: 24px;
+}
+
+#musicasJuntas {
+    color: #777;
+
+    font-size: 14px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    width: 92%;
+    max-width: 1200px;
+
+    margin: 30px auto;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: #202020;
+
+    text-align: center;
+}
+
+footer p {
+    color: #888;
+
+    font-size: 12px;
+
+    margin: 4px;
+}
+
+footer p:last-child {
+    color: #9db5a2;
+}
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 850px) {
+
+    main {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+
+            "playlist"
+
+            "adicionar"
+
+            "filtro"
+
+            "musicas";
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 35px 25px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    main {
+        width: 94%;
+    }
+}
