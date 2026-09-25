@@ -33,7 +33,6 @@ function mostrarPlaylist() {
 
   contadorMusicas.textContent = playlist.length;
 
-  // Pega apenas os nomes das músicas
   const nomes = playlist.map((musica) => musica.nome);
 
   musicasJuntas.textContent = nomes.join(", ");
