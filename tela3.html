@@ -1,0 +1,88 @@
+  <!doctype html>
+  <html lang="pt-br">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <title>Minha Playlist</title>
+
+      <link rel="stylesheet" href="style2.css" />
+    </head>
+    <nav>
+      <a href="index.html">Tela 1</a>
+      <a href="tela2.html">Tela 2</a>
+      <a href="tela3.html">Tela 3</a>
+    </nav>
+
+    <body>
+      <header>
+        <h1>Minha Playlist</h1>
+        <p>Adicione, remova e organize suas músicas favoritas.</p>
+      </header>
+
+      <main>
+      
+        <section>
+          <h2>Adicionar música</h2>
+
+          <form id="formAdicionar">
+            <label for="nomeMusica">Nome da música:</label>
+            <input
+              type="text"
+              id="nomeMusica"
+              placeholder="Digite o nome da música"
+              required
+            />
+
+            <label for="nomeArtista">Artista:</label>
+            <input
+              type="text"
+              id="nomeArtista"
+              placeholder="Digite o nome do artista"
+              required
+            />
+
+            <button type="submit">Adicionar música</button>
+          </form>
+        </section>
+        <section>
+          <h2>Minha playlist</h2>
+
+          <p>
+            Quantidade de músicas:
+            <strong id="contadorMusicas">0</strong>
+          </p>
+
+          <ul id="listaMusicas">
+          </ul>
+        </section>
+
+        <section>
+          <h2>Músicas da playlist</h2>
+
+          <p id="musicasJuntas">Nenhuma música adicionada.</p>
+        </section>
+
+        <section>
+          <h2>Buscar por artista</h2>
+
+          <label for="artistaFiltro">Digite o nome do artista:</label>
+
+          <input type="text" id="artistaFiltro" placeholder="Ex: Taylor Swift" />
+
+          <button type="button" id="btnFiltrar">Filtrar músicas</button>
+
+          <div id="resultadoFiltro">
+      
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>Projeto de Playlist Web</p>
+        <p>CSS desenvolvido com auxílio de IA: ChatGPT</p>
+      </footer>
+
+      <script src="script.js"></script>
+    </body>
+  </html>

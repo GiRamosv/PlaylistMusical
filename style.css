@@ -1,0 +1,524 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   NAVBAR - TELA INICIAL
+===================================================== */
+
+nav {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px 20px;
+
+    background: #0b0b0b;
+
+    border-bottom: 1px solid #292929;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+nav a {
+    position: relative;
+
+    padding: 10px 18px;
+
+    color: #b3b3b3;
+
+    text-decoration: none;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    border-radius: 25px;
+
+    transition: 0.25s ease;
+}
+
+/* Efeito quando passa o mouse */
+
+nav a:hover {
+    color: white;
+
+    background: #242424;
+}
+
+/* =====================================================
+   TRACINHO DA PÁGINA ATUAL
+===================================================== */
+
+nav a:first-child::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+
+    bottom: 3px;
+
+    height: 3px;
+
+    background: #1ed760;
+
+    border-radius: 10px;
+}
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 600px) {
+
+    nav {
+        gap: 3px;
+
+        padding: 10px;
+    }
+
+    nav a {
+        padding: 9px 11px;
+
+        font-size: 12px;
+    }
+}
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #121212;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+    padding: 42px 7% 32px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #252525 0%,
+            #181818 100%
+        );
+
+    border-bottom: 1px solid #292929;
+}
+
+header h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+header p {
+    margin-top: 6px;
+
+    color: #a7a7a7;
+
+    font-size: 15px;
+}
+
+/* =====================================================
+   LAYOUT PRINCIPAL
+===================================================== */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 30px auto;
+
+    display: grid;
+
+    grid-template-columns: 1.8fr 1fr;
+
+    grid-template-areas:
+
+        "playlist adicionar"
+
+        "playlist filtro"
+
+        "musicas musicas";
+
+    gap: 18px;
+}
+
+/* =====================================================
+   POSICIONAMENTO
+===================================================== */
+
+main section:nth-child(1) {
+    grid-area: adicionar;
+}
+
+main section:nth-child(2) {
+    grid-area: playlist;
+}
+
+main section:nth-child(3) {
+    grid-area: musicas;
+}
+
+main section:nth-child(4) {
+    grid-area: filtro;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+section {
+    background: #181818;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    border: 1px solid #282828;
+
+    transition: 0.3s ease;
+}
+
+section:hover {
+    background: #1c1c1c;
+
+    border-color: #333;
+
+    transform: translateY(-2px);
+}
+
+section h2 {
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 18px;
+}
+
+/* =====================================================
+   PLAYLIST — CARD PRINCIPAL
+===================================================== */
+
+main section:nth-child(2) {
+    min-height: 550px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #202020,
+            #151515
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+main section:nth-child(2)::before {
+    content: "♫";
+
+    position: absolute;
+
+    right: 30px;
+    top: 10px;
+
+    font-size: 110px;
+
+    color: #ffffff08;
+
+    pointer-events: none;
+}
+
+main section:nth-child(2) h2 {
+    font-size: 28px;
+}
+
+/* =====================================================
+   CONTADOR
+===================================================== */
+
+#contadorMusicas {
+    display: inline-block;
+
+    margin-left: 5px;
+
+    color: #1ed760;
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+/* =====================================================
+   LISTA
+===================================================== */
+
+ul {
+    list-style: none;
+
+    margin-top: 25px;
+}
+
+li {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 60px;
+
+    padding: 12px 15px;
+
+    margin-bottom: 7px;
+
+    border-radius: 8px;
+
+    background: #242424;
+
+    color: #eeeeee;
+
+    font-size: 15px;
+
+    transition: 0.25s ease;
+}
+
+li::before {
+    content: "♫";
+
+    margin-right: 14px;
+
+    color: #1ed760;
+
+    font-size: 18px;
+}
+
+li:hover {
+    background: #303030;
+
+    transform: translateX(5px);
+}
+
+/* =====================================================
+   FORMULÁRIO
+===================================================== */
+
+form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+label {
+    color: #b3b3b3;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-top: 7px;
+}
+
+input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background: #242424;
+
+    color: white;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: 0.25s;
+}
+
+input::placeholder {
+    color: #777;
+}
+
+input:focus {
+    border-color: #1ed760;
+
+    background: #292929;
+}
+
+/* =====================================================
+   BOTÕES
+===================================================== */
+
+button {
+    margin-top: 12px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #1ed760;
+
+    color: #000000;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+button:hover {
+    background: #1fdf64;
+
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* =====================================================
+   MÚSICAS JUNTAS
+===================================================== */
+
+#musicasJuntas {
+    padding: 15px;
+
+    background: #242424;
+
+    border-radius: 8px;
+
+    color: #a7a7a7;
+
+    font-size: 14px;
+}
+
+/* =====================================================
+   FILTRO
+===================================================== */
+
+#artistaFiltro {
+    margin-bottom: 4px;
+}
+
+#btnFiltrar {
+    width: 100%;
+}
+
+#resultadoFiltro {
+    margin-top: 17px;
+}
+
+#resultadoFiltro p {
+    padding: 11px 13px;
+
+    margin-bottom: 7px;
+
+    background: #242424;
+
+    border-radius: 7px;
+
+    color: #cccccc;
+
+    font-size: 14px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    margin-top: 50px;
+
+    padding: 28px;
+
+    text-align: center;
+
+    background: #0b0b0b;
+
+    border-top: 1px solid #292929;
+}
+
+footer p {
+    color: #777;
+
+    font-size: 13px;
+
+    margin: 4px;
+}
+
+footer p:last-child {
+    color: #1ed760;
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    main {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+
+            "playlist"
+
+            "adicionar"
+
+            "filtro"
+
+            "musicas";
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 32px 6%;
+    }
+
+    header h1 {
+        font-size: 31px;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
